@@ -61,7 +61,7 @@ module.exports = (options, context) => {
           ? (metaRobots.content || '').split(/,/).map(x => x.trim()).includes('noindex')
           : fmOpts.exclude === true
 
-        if (excludePage) {
+        if (excludePage || page.path.includes('/page/')) {
           exclude.push(page.path)
         }
 
